@@ -11689,16 +11689,23 @@ function () {
   }, {
     key: "nextPage",
     value: function nextPage(count) {
-      Array.prototype.forEach.call(this.paginationItem, function (element) {
-        element.innerHTML = Number(element.innerHTML) + count;
-      });
+      var counter = 0;
+
+      while (counter <= this.countOfButton) {
+        var newInnerHTML = Number(this.paginationItem[counter].innerHTML) + count;
+        this.paginationItem[counter].innerHTML = newInnerHTML;
+        counter += 1;
+      }
     }
   }, {
     key: "newPage",
     value: function newPage() {
-      Array.prototype.forEach.call(this.paginationItem, function (element, index) {
-        element.innerHTML = index + 1;
-      });
+      var counter = 0;
+
+      while (counter <= this.countOfButton) {
+        this.paginationItem[counter].innerHTML = counter + 1;
+        counter += 1;
+      }
     }
   }], [{
     key: "getData",
